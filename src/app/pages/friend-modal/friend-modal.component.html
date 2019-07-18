@@ -1,13 +1,48 @@
 <div class="modal-header">
-  <h4 class="modal-title">Hi there!</h4>
+  <h4 class="modal-title">Agregar Amigo</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
-  <p>Agregar Amigo</p>
-
-</div>
+  <div class="row">
+    <div>
+      <img [src]="croppedImage || friend.photo || 'assets/img/generic_avatar.png'" class="avatarImage img-fluid">
+      <label class="btn btn-outline-dark">
+        <input type="file" (change)="fileChangeEvent($event)">
+        Subir Foto
+      </label>
+    </div>
+    <div class="col-12">
+      <image-cropper
+        [imageChangedEvent]="imageChangedEvent"
+        [maintainAspectRatio]="true"
+        [aspectRatio]="1 / 1"
+        [resizeToWidth]="128"
+        format="png"
+        (imageCroppedBase64)="imageCropped($event)"
+        (imageLoaded)="imageLoaded()"
+        (loadImageFailed)="loadImageFailed()"
+      ></image-cropper>
+    </div>
+    <div class="col-12">
+      <label class="col-3">Nombre</label>
+      <input class="col-9" type="text" [(ngModel)]="friend.name" placeholder="Nombre">
+    </div>
+    <div class="col-12">
+      <label class="col-3">Instagram</label>
+      <input class="col-9" type="text" [(ngModel)]="friend.instagram" placeholder="Instagram">
+    </div>
+    <div class="col-12">
+      <label class="col-3">Facebook</label>
+      <input class="col-9" type="text" [(ngModel)]="friend.facebook" placeholder="Facebook">
+    </div>
+    <div  class="col-12">
+      <label class="col-3">Twitter</label>
+      <input class="col-9" type="text" [(ngModel)]="friend.twitter" placeholder="Twitter">
+    </div>
+  </div>
 <div class="modal-footer">
+  <!--<button type="button" class="btn btn-outline-dark" (change)="fileChangeEvent($event)">Subir Foto</button>-->
   <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Agregar</button>
 </div>

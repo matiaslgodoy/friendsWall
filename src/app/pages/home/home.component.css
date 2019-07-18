@@ -1,0 +1,22 @@
+#homeContainer {
+  background: rgba(114,224,252,1);
+  background: -moz-linear-gradient(left, rgba(114,224,252,1) 0%, rgba(117,189,209,1) 41%, rgba(52,157,186,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(114,224,252,1)), color-stop(41%, rgba(117,189,209,1)), color-stop(100%, rgba(52,157,186,1)));
+  background: -webkit-linear-gradient(left, rgba(114,224,252,1) 0%, rgba(117,189,209,1) 41%, rgba(52,157,186,1) 100%);
+  background: -o-linear-gradient(left, rgba(114,224,252,1) 0%, rgba(117,189,209,1) 41%, rgba(52,157,186,1) 100%);
+  background: -ms-linear-gradient(left, rgba(114,224,252,1) 0%, rgba(117,189,209,1) 41%, rgba(52,157,186,1) 100%);
+  background: linear-gradient(to right, rgba(114,224,252,1) 0%, rgba(117,189,209,1) 41%, rgba(52,157,186,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#72e0fc', endColorstr='#349dba', GradientType=1 );
+  height:100em;
+}
+.board{
+  width: 90%;
+  margin: auto;
+  margin-top: 4%;
+}
+.btn-container{
+  margin-top: 20px;
+}
+.btn-add-friend{
+
+}

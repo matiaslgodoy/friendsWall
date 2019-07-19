@@ -5,3 +5,9 @@
 .wid-20-per{
   width: 20%;
 }
+
+.shadow-item{
+  -webkit-box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.75);
+}

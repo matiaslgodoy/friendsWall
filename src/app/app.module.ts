@@ -11,10 +11,10 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { FriendModalComponent } from './pages/friend-modal/friend-modal.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { WallComponent } from './pages/wall/wall.component';
 import { HomeComponent } from './pages/home/home.component';
 import {RouterModule, Routes} from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
+import { BoardComponent } from './pages/board/board.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -25,9 +25,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     FriendModalComponent,
-    WallComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,

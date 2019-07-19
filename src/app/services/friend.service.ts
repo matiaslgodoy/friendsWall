@@ -13,14 +13,14 @@ export class FriendService {
   getFriends() {
     return this.angularFireDatabase.list('/friends');
   }
-  getFriendsByUserId(userId) {
-    this.friendsList = this.angularFireDatabase.list('/friends/' + userId);
-    // return this.friendsList;
-
-    // return this.friendsList .filter( (item) => {
-    //   return JSON.stringify(item).toLowerCase().includes(userId);
-    // });
-  }
+  // getFriendsByUserId(userId) {
+  //   this.friendsList = this.angularFireDatabase.list('/friends/' + userId);
+  //   // return this.friendsList;
+  //
+  //   // return this.friendsList .filter( (item) => {
+  //   //   return JSON.stringify(item).toLowerCase().includes(userId);
+  //   // });
+  // }
   getFriendById(uid) {
     return this.angularFireDatabase.object('/friends/' + uid);
   }

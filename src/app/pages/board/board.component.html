@@ -1,0 +1,49 @@
+<div id="test-div">Darwoft</div>
+<div id="test-buttons-div">
+  <input id="test-add-number" type="number" placeholder="how much notes to add?">
+  <button onclick="nNotesToAdd(skipValidation = false)">add</button>
+  <button onclick="testAdd(skipValidation = false)" style="margin-right: 40px">single add</button>
+  <button onclick="testDel()">remove last one</button>
+  <button onclick="testDel(true)">remove all</button>
+</div>
+<div id="board">
+  <div class="row">
+    <img [src]="'/assets/img/photo_border_add.png'" alt="sorry" id="add-photo" class="shadow-item" href="#input-modal" data-toggle="modal" (click)="openAddFriendModal()">
+    <img [src]="'/assets/img/note_add.png'"  alt="sorry" id="add-note"  class="shadow-item" href="#input-modal" data-toggle="modal" (click)="openAddFriendModal()">
+  </div>
+  <div id="input-modal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">New task</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="title">Title:</label><span class="validation-error">error</span>
+              <input type="text" class="form-control" id="title" placeholder="Enter title of the task" autofocus>
+            </div>
+            <div class="form-group">
+              <label for="title">Date and Time:</label><span class="validation-error">error</span>
+              <input type='text' class="form-control" id="datetimepicker4" placeholder="Enter date and time of the task">
+            </div>
+            <div class="form-group">
+              <label for="description">Description:</label><span class="validation-error">error</span>
+              <textarea class="form-control" id="description" rows="4" placeholder="Describe the task"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <span id="color-input" style="display: none"><label style="float: left;">Pick a color: &nbsp;</label>
+            <input type="color" style="float: left" value="#FFFF00"></span>
+          <button type="button" class="btn btn-info" id="color-button" style="float: left">Custom color</button>
+          <button type="button" class="btn btn-default" id="clear-button">Clear</button>
+          <button type="button" class="btn btn-primary" id="add-button" data-dismiss="modal">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wscroll" id="inner-board">
+  </div>
+</div>

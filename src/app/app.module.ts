@@ -14,10 +14,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { WallComponent } from './pages/wall/wall.component';
 import { HomeComponent } from './pages/home/home.component';
 import {RouterModule, Routes} from '@angular/router';
+import { LoginComponent } from './pages/login/login.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
 ];
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ const appRoutes: Routes = [
     FriendModalComponent,
     WallComponent,
     HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

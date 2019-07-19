@@ -8,5 +8,6 @@ export const environment = {
     storageBucket: "friendswall-4e093.appspot.com",
     messagingSenderId: "618257249175",
     appId: "1:618257249175:web:c8e6bb9aa4d4c398"
+
   }
 };

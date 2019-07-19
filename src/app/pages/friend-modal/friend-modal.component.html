@@ -6,14 +6,8 @@
 </div>
 <div class="modal-body">
   <div class="row">
-    <div>
-      <img [src]="croppedImage || friend.photo || 'assets/img/generic_avatar.png'" class="avatarImage img-fluid">
-      <label class="btn btn-outline-dark">
-        <input type="file" (change)="fileChangeEvent($event)">
-        Subir Foto
-      </label>
-    </div>
-    <div class="col-12">
+    <img *ngIf="!isLoadImage" [src]="croppedImage || friend.photo || 'assets/img/generic_user.png'" class="avatarImage img-fluid">
+    <div *ngIf="isLoadImage" class="col-6 mar-aut">
       <image-cropper
         [imageChangedEvent]="imageChangedEvent"
         [maintainAspectRatio]="true"
@@ -25,6 +19,15 @@
         (loadImageFailed)="loadImageFailed()"
       ></image-cropper>
     </div>
+  </div>
+  <div class="row">
+    <label class="btn btn-outline-dark" (click)="isLoadImage = !isLoadImage">
+      <input type="file" (change)="fileChangeEvent($event)">
+      Subir Foto
+    </label>
+  </div>
+  <div class="row">
+
     <div class="col-12">
       <label class="col-3">Nombre</label>
       <input class="col-9" type="text" [(ngModel)]="friend.name" placeholder="Nombre">

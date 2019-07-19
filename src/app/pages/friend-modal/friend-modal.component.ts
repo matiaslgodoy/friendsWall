@@ -6,6 +6,7 @@ import {FriendService} from '../../services/friend.service';
 import {User} from '../../interfaces/user';
 import {UserService} from '../../services/user.service';
 import {AuthenticationService} from '../../services/authentication.service';
+import {Guid} from 'guid-typescript';
 
 @Component({
   selector: 'app-friend-modal',
@@ -28,7 +29,6 @@ export class FriendModalComponent implements OnInit {
     this.authenticationService.getStatus().subscribe((status) => {
       this.userService.getUserById(status.uid).valueChanges().subscribe((data: User) => {
         this.user = data;
-        //console.log(this.user);
       }, (error) => {
         console.log(error);
       });
@@ -61,6 +61,7 @@ export class FriendModalComponent implements OnInit {
       pictures.then((result) => {
         this.picture = this.firebaseStorage.ref('pictures/' + currentPictureId + '.jpg').getDownloadURL();
         this.picture.subscribe((p) => {
+          this.friend.uid = currentPictureId;
           this.friend.picture = p;
           this.friend.userId = this.user.uid;
           this.friendService.createFriend(this.friend).then(() => {

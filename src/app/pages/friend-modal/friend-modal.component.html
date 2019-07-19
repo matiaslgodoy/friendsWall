@@ -33,19 +33,28 @@
       <input class="col-9" type="text" [(ngModel)]="friend.name" placeholder="Nombre">
     </div>
     <div class="col-12">
-      <label class="col-3">Instagram</label>
-      <input class="col-9" type="text" [(ngModel)]="friend.instagram" placeholder="Instagram">
+      <label class="col-3">Contacto</label>
+      <input class="col-9" type="text" [(ngModel)]="friend.name" placeholder="@">
     </div>
     <div class="col-12">
-      <label class="col-3">Facebook</label>
-      <input class="col-9" type="text" [(ngModel)]="friend.facebook" placeholder="Facebook">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-facebook-square"></i>
+      <i class="fab fa-twitter-square"></i>
+      <i class="fas fa-ban"></i>
     </div>
-    <div  class="col-12">
-      <label class="col-3">Twitter</label>
-      <input class="col-9" type="text" [(ngModel)]="friend.twitter" placeholder="Twitter">
-    </div>
+    <!--<div class="col-12">-->
+      <!--<label class="col-3">Instagram</label>-->
+      <!--<input class="col-9" type="text" [(ngModel)]="friend.instagram" placeholder="Instagram">-->
+    <!--</div>-->
+    <!--<div class="col-12">-->
+      <!--<label class="col-3">Facebook</label>-->
+      <!--<input class="col-9" type="text" [(ngModel)]="friend.facebook" placeholder="Facebook">-->
+    <!--</div>-->
+    <!--<div  class="col-12">-->
+      <!--<label class="col-3">Twitter</label>-->
+      <!--<input class="col-9" type="text" [(ngModel)]="friend.twitter" placeholder="Twitter">-->
+    <!--</div>-->
   </div>
 <div class="modal-footer">
-  <!--<button type="button" class="btn btn-outline-dark" (change)="fileChangeEvent($event)">Subir Foto</button>-->
   <button type="button" class="btn btn-outline-dark" (click)="addFiend()">Agregar</button>
 </div>

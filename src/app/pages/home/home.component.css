@@ -20,3 +20,20 @@
 .btn-add-friend{
 
 }
+
+.picture-container{
+  position: relative; left: 0; top: 0;
+
+}
+
+.picture-back{
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.picture-front{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+

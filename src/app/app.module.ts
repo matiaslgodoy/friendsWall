@@ -15,6 +15,8 @@ import { HomeComponent } from './pages/home/home.component';
 import {RouterModule, Routes} from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { BoardComponent } from './pages/board/board.component';
+import { NoteComponent } from './pages/note/note.component';
+import { ModalPhotoComponent } from './pages/modal-photo/modal-photo.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -27,7 +29,9 @@ const appRoutes: Routes = [
     FriendModalComponent,
     HomeComponent,
     LoginComponent,
-    BoardComponent
+    BoardComponent,
+    NoteComponent,
+    ModalPhotoComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,8 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
-    FriendModalComponent
+    FriendModalComponent,
+    ModalPhotoComponent
   ]
 })
 export class AppModule { }

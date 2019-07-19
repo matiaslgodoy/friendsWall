@@ -14,7 +14,7 @@ import {Friend} from '../../interfaces/friend';
 })
 export class HomeComponent implements OnInit {
   user: User;
-  friedsList: Friend[] = [];
+  fiendsList: Friend[] = [];
 
   constructor(private modalService: NgbModal,
               private userService: UserService,
@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
     if (this.user) {
       this.friendService.getFriends().valueChanges().subscribe((data: Friend[]) => {
         console.log(data);
-        this.friedsList = data;
+        this.fiendsList = data;
       }, (error) => {
         console.log(error);
       });

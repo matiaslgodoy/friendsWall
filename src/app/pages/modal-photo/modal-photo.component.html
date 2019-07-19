@@ -1,0 +1,60 @@
+<div class="modal-header">
+  <h4 class="modal-title">Agregar Foto</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <img *ngIf="!isLoadImage" [src]="croppedImage || photo.picture || 'assets/img/generic_user.png'" class="avatarImage img-fluid">
+    <div *ngIf="isLoadImage" class="col-6 mar-aut">
+      <image-cropper
+        [imageChangedEvent]="imageChangedEvent"
+        [maintainAspectRatio]="true"
+        [aspectRatio]="1 / 1"
+        [resizeToWidth]="128"
+        format="png"
+        (imageCroppedBase64)="imageCropped($event)"
+        (imageLoaded)="imageLoaded()"
+        (loadImageFailed)="loadImageFailed()"
+      ></image-cropper>
+    </div>
+  </div>
+  <div class="row">
+    <div class="wrapper">
+      <div class="file-upload btn btn-outline-dark" (click)="isLoadImage = !isLoadImage">
+        <input type="file" (change)="fileChangeEvent($event)"/>
+        <i class="fas fa-file-upload"></i>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-12">
+      <label class="col-3">Cambiar Foto</label>
+      <label class="col-9 custom-file-upload">
+        <input type="file" (change)="fileChangeEvent($event)">
+      </label>
+    </div>
+    <div class="col-12">
+      <label class="col-3">Nombre</label>
+      <input class="col-9" type="text" [(ngModel)]="photo.name" placeholder="Nombre">
+    </div>
+    <div class="col-12">
+      <label class="col-3">Contacto</label>
+      <input class="col-9" type="text" [(ngModel)]="photo.contacto" placeholder="@">
+    </div>
+    <div class="col-12">
+      <label class="col-3">Red Social</label>
+      <span class="col-9 pad-le-0">
+        <span class="font-20 mar-ri-10 pointer " [ngClass]="{'color-instagram': contactType == 'instagram'}"><i class="fab fa-instagram" (click)="contactType='instagram'"></i></span>
+        <span class="font-20 mar-ri-10 pointer " [ngClass]="{'color-facebook': contactType == 'facebook'}"><i class="fab fa-facebook-square" (click)="contactType='facebook'"></i></span>
+        <span class="font-20 mar-ri-10 pointer " [ngClass]="{'color-twitter' : contactType == 'twitter'}"><i class="fab fa-twitter-square" (click)="contactType='twitter'"></i></span>
+        <span class="font-20 mar-ri-10 pointer " [ngClass]="{'color-cancel' : contactType == 'none'}"><i class="fas fa-ban" (click)="contactType='none'"></i></span>
+      </span>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="addPhoto()">Agregar</button>
+  </div>

@@ -1,15 +1,8 @@
 <div id="test-div">Darwoft</div>
-<div id="test-buttons-div">
-  <input id="test-add-number" type="number" placeholder="how much notes to add?">
-  <button onclick="nNotesToAdd(skipValidation = false)">add</button>
-  <button onclick="testAdd(skipValidation = false)" style="margin-right: 40px">single add</button>
-  <button onclick="testDel()">remove last one</button>
-  <button onclick="testDel(true)">remove all</button>
-</div>
 <div id="board">
   <div class="row">
-    <img [src]="'/assets/img/photo_border_add.png'" alt="sorry" id="add-photo" class="shadow-item" href="#input-modal" data-toggle="modal" (click)="openAddFriendModal()">
-    <img [src]="'/assets/img/note_add.png'"  alt="sorry" id="add-note"  class="shadow-item" href="#input-modal" data-toggle="modal" (click)="openAddFriendModal()">
+    <img [src]="'/assets/img/photo_border_add.png'" alt="sorry" id="add-photo" class="shadow-item" href="#input-modal" data-toggle="modal" (click)="openAddPhotoModal()">
+    <img [src]="'/assets/img/note_add.png'"  alt="sorry" id="add-note"  class="shadow-item" href="#input-modal" data-toggle="modal">
   </div>
   <div id="input-modal" class="modal fade">
     <div class="modal-dialog">
@@ -45,5 +38,14 @@
     </div>
   </div>
   <div class="wscroll" id="inner-board">
+    <div *ngFor="let friend of friedsList">
+      <div class="picture-container">
+        <img [src]="friend.picture" class="wid-20-per picture-back ">
+        <img [src]="'/assets/img/photo_border.png'" class="wid-20-per picture-front">
+      </div>
+    </div>
+
   </div>
 </div>
+
+

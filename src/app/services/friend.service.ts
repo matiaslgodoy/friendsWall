@@ -7,20 +7,12 @@ import {Pipe, PipeTransform} from '@angular/core';
   providedIn: 'root'
 })
 export class FriendService {
-  friendsList: Friend[];
+
   constructor(private angularFireDatabase: AngularFireDatabase) {
   }
   getFriends() {
     return this.angularFireDatabase.list('/friends');
   }
-  // getFriendsByUserId(userId) {
-  //   this.friendsList = this.angularFireDatabase.list('/friends/' + userId);
-  //   // return this.friendsList;
-  //
-  //   // return this.friendsList .filter( (item) => {
-  //   //   return JSON.stringify(item).toLowerCase().includes(userId);
-  //   // });
-  // }
   getFriendById(uid) {
     return this.angularFireDatabase.object('/friends/' + uid);
   }

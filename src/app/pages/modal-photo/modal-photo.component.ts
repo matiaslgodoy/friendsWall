@@ -1,29 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {Friend} from '../../interfaces/friend';
-import {AngularFireStorage} from '@angular/fire/storage';
-import {FriendService} from '../../services/friend.service';
-import {User} from '../../interfaces/user';
-import {UserService} from '../../services/user.service';
 import {AuthenticationService} from '../../services/authentication.service';
-import {Guid} from 'guid-typescript';
+import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {AngularFireStorage} from '@angular/fire/storage';
+import {UserService} from '../../services/user.service';
+import {User} from '../../interfaces/user';
+import {Photo} from '../../interfaces/photo';
+import {PhotoService} from '../../services/photo.service';
 
 @Component({
-  selector: 'app-friend-modal',
-  templateUrl: './friend-modal.component.html',
-  styleUrls: ['./friend-modal.component.scss']
+  selector: 'app-modal-photo',
+  templateUrl: './modal-photo.component.html',
+  styleUrls: ['./modal-photo.component.scss']
 })
-export class FriendModalComponent implements OnInit {
+export class ModalPhotoComponent implements OnInit {
+
   user: User;
-  friend: Friend = <Friend>{};
+  photo: Photo = <Photo> {};
   imageChangedEvent: any = '';
   croppedImage: any = '';
   isLoadImage = false;
   picture: any;
+  contactType = 'none';
 
   constructor(public activeModal: NgbActiveModal,
               private firebaseStorage: AngularFireStorage,
-              private friendService: FriendService,
+              private photoService: PhotoService,
               private userService: UserService,
               private authenticationService: AuthenticationService) {
     this.authenticationService.getStatus().subscribe((status) => {
@@ -54,31 +55,24 @@ export class FriendModalComponent implements OnInit {
     // show message
   }
 
-  addFiend() {
+  addPhoto() {
     if (this.croppedImage) {
       const currentPictureId = Date.now();
       const pictures = this.firebaseStorage.ref('pictures/' + currentPictureId + '.jpg').putString(this.croppedImage, 'data_url');
       pictures.then((result) => {
         this.picture = this.firebaseStorage.ref('pictures/' + currentPictureId + '.jpg').getDownloadURL();
         this.picture.subscribe((p) => {
-          this.friend.uid = currentPictureId;
-          this.friend.picture = p;
-          this.friend.userId = this.user.uid;
-          this.friendService.createFriend(this.friend).then(() => {
-            alert('Amigo Agregado!');
+          this.photo.uid = currentPictureId;
+          this.photo.picture = p;
+          this.photo.userId = this.user.uid;
+          this.photoService.createPhoto(this.photo).then(() => {
+            alert('Foto Agregada!');
           }).catch((error) => {
             console.log(error);
           });
           this.activeModal.close();
         });
       }).catch((error) => {
-        console.log(error);
-      });
-    } else {
-      this.userService.editUser(this.user).then(() => {
-        alert('Cambios guardados!');
-      }).catch((error) => {
-        alert('Hubo un error');
         console.log(error);
       });
     }

@@ -6,7 +6,7 @@
 </div>
 <div class="modal-body">
   <div class="row">
-    <img *ngIf="!isLoadImage" [src]="croppedImage || friend.photo || 'assets/img/generic_user.png'" class="avatarImage img-fluid">
+    <img *ngIf="!isLoadImage" [src]="croppedImage || friend.picture || 'assets/img/generic_user.png'" class="avatarImage img-fluid">
     <div *ngIf="isLoadImage" class="col-6 mar-aut">
       <image-cropper
         [imageChangedEvent]="imageChangedEvent"
@@ -47,5 +47,5 @@
   </div>
 <div class="modal-footer">
   <!--<button type="button" class="btn btn-outline-dark" (change)="fileChangeEvent($event)">Subir Foto</button>-->
-  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Agregar</button>
+  <button type="button" class="btn btn-outline-dark" (click)="addFiend()">Agregar</button>
 </div>

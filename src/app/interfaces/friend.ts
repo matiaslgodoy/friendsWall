@@ -1,8 +1,9 @@
 export interface Friend {
+  uid: any;
+  userId: any;
   name: string;
   instagram?: string;
   facebook?: string;
   twitter?: string;
-  uid: any;
-  photo?: string;
+  picture?: string;
 }

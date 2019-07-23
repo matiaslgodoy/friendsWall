@@ -21,6 +21,7 @@ export class ModalPhotoComponent implements OnInit {
   isLoadImage = false;
   picture: any;
   contactType = 'none';
+  photoFileName = 'up-photo';
 
   constructor(public activeModal: NgbActiveModal,
               private firebaseStorage: AngularFireStorage,
@@ -44,6 +45,9 @@ export class ModalPhotoComponent implements OnInit {
 
   fileChangeEvent(event: any): void {
     this.imageChangedEvent = event;
+    if (event.target.files && event.target.files[0]) {
+      this.photoFileName = event.target.files[0].name;
+    }
   }
   imageCropped(image: string) {
     this.croppedImage = image;

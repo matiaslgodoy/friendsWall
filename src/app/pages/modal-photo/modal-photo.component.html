@@ -1,11 +1,11 @@
 <div class="modal-header">
-  <h4 class="modal-title">Agregar Foto</h4>
+  <h4 class="modal-title">{{'add-photo' | translate}}</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
-  <div class="row">
+  <div class="row mb-4">
     <img *ngIf="!isLoadImage" [src]="croppedImage || photo.picture || 'assets/img/generic_user.png'" class="avatarImage img-fluid">
     <div *ngIf="isLoadImage" class="col-6 mar-aut">
       <image-cropper
@@ -21,31 +21,23 @@
     </div>
   </div>
   <div class="row">
-    <div class="wrapper">
-      <div class="file-upload btn btn-outline-dark" (click)="isLoadImage = !isLoadImage">
-        <input type="file" (change)="fileChangeEvent($event)"/>
-        <i class="fas fa-file-upload"></i>
+    <div class="col-12 input-group mb-2">
+      <label class="col-3 mt-2">{{'photo' | translate}}</label>
+      <div class="custom-file" (click)="isLoadImage = !isLoadImage">
+        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" (change)="fileChangeEvent($event)"
+        accept=".png, .jpg, .jpeg, .svg, .jp2">
+        <label class="custom-file-label" for="inputGroupFile01">{{photoFileName | translate}}</label>
       </div>
     </div>
-  </div>
-  <div class="row">
 
-    <div class="col-12">
-      <label class="col-3">Cambiar Foto</label>
-      <label class="col-9 custom-file-upload">
-        <input type="file" (change)="fileChangeEvent($event)">
-      </label>
+    <div class="col-12 mb-2">
+      <div class="input-group">
+        <label class="col-3 mt-2">{{'name' | translate}}</label>
+        <input [(ngModel)]="photo.name" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">
+      </div>
     </div>
-    <div class="col-12">
-      <label class="col-3">Nombre</label>
-      <input class="col-9" type="text" [(ngModel)]="photo.name" placeholder="Nombre">
-    </div>
-    <div class="col-12">
-      <label class="col-3">Contacto</label>
-      <input class="col-9" type="text" [(ngModel)]="photo.contacto" placeholder="@">
-    </div>
-    <div class="col-12">
-      <label class="col-3">Red Social</label>
+    <div class="col-12 mb-2">
+      <label class="col-3 mt-2">{{'social-network' | translate}}</label>
       <span class="col-9 pad-le-0">
         <span class="font-20 mar-ri-10 pointer " [ngClass]="{'color-instagram': contactType == 'instagram'}"><i class="fab fa-instagram" (click)="contactType='instagram'"></i></span>
         <span class="font-20 mar-ri-10 pointer " [ngClass]="{'color-facebook': contactType == 'facebook'}"><i class="fab fa-facebook-square" (click)="contactType='facebook'"></i></span>
@@ -53,6 +45,16 @@
         <span class="font-20 mar-ri-10 pointer " [ngClass]="{'color-cancel' : contactType == 'none'}"><i class="fas fa-ban" (click)="contactType='none'"></i></span>
       </span>
     </div>
+    <div class="col-12 mb-4" *ngIf="contactType !== 'none'">
+      <div class="input-group">
+        <label class="col-3 mt-2">{{'contact' | translate}}</label>
+        <div class="input-group-prepend">
+          <span class="input-group-text">@</span>
+        </div>
+        <input [(ngModel)]="photo.contact" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+    </div>
+
 
   </div>
   <div class="modal-footer">

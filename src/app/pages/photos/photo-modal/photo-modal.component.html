@@ -25,7 +25,7 @@
       <label class="col-3 mt-2">{{'photo' | translate}}</label>
       <div class="custom-file" (click)="isLoadImage = !isLoadImage">
         <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" (change)="fileChangeEvent($event)"
-        accept=".png, .jpg, .jpeg, .svg, .jp2">
+               accept=".png, .jpg, .jpeg, .svg, .jp2">
         <label class="custom-file-label" for="inputGroupFile01">{{photoFileName | translate}}</label>
       </div>
     </div>
@@ -39,13 +39,13 @@
     <div class="col-12 mb-2">
       <label class="col-3 mt-2">{{'social-network' | translate}}</label>
       <span class="col-9 pad-le-0">
-        <span class="font-20 mar-ri-10 pointer " [ngClass]="{'color-instagram': contactType == 'instagram'}"><i class="fab fa-instagram" (click)="contactType='instagram'"></i></span>
-        <span class="font-20 mar-ri-10 pointer " [ngClass]="{'color-facebook': contactType == 'facebook'}"><i class="fab fa-facebook-square" (click)="contactType='facebook'"></i></span>
-        <span class="font-20 mar-ri-10 pointer " [ngClass]="{'color-twitter' : contactType == 'twitter'}"><i class="fab fa-twitter-square" (click)="contactType='twitter'"></i></span>
-        <span class="font-20 mar-ri-10 pointer " [ngClass]="{'color-cancel' : contactType == 'none'}"><i class="fas fa-ban" (click)="contactType='none'"></i></span>
+        <span class="font-20 mar-ri-10 pointer " [ngClass]="{'color-instagram': photo.contactType == 'instagram'}"><i class="fab fa-instagram" (click)="photo.contactType='instagram'"></i></span>
+        <span class="font-20 mar-ri-10 pointer " [ngClass]="{'color-facebook': photo.contactType == 'facebook'}"><i class="fab fa-facebook-square" (click)="photo.contactType='facebook'"></i></span>
+        <span class="font-20 mar-ri-10 pointer " [ngClass]="{'color-twitter' : photo.contactType == 'twitter'}"><i class="fab fa-twitter-square" (click)="photo.contactType='twitter'"></i></span>
+        <span class="font-20 mar-ri-10 pointer " [ngClass]="{'color-cancel' : photo.contactType == 'none'}"><i class="fas fa-ban" (click)="photo.contactType='none'; photo.contact = ''"></i></span>
       </span>
     </div>
-    <div class="col-12 mb-4" *ngIf="contactType !== 'none'">
+    <div class="col-12 mb-4" *ngIf="photo.contactType !== 'none'">
       <div class="input-group">
         <label class="col-3 mt-2">{{'contact' | translate}}</label>
         <div class="input-group-prepend">
@@ -60,3 +60,5 @@
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="addPhoto()">Agregar</button>
   </div>
+</div>
+

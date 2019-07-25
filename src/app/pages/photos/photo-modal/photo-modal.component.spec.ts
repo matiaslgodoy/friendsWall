@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FriendModalComponent } from './friend-modal.component';
+import { PhotoModalComponent } from './photo-modal.component';
 
-describe('FriendModalComponent', () => {
-  let component: FriendModalComponent;
-  let fixture: ComponentFixture<FriendModalComponent>;
+describe('PhotoModalComponent', () => {
+  let component: PhotoModalComponent;
+  let fixture: ComponentFixture<PhotoModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FriendModalComponent ]
+      declarations: [ PhotoModalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FriendModalComponent);
+    fixture = TestBed.createComponent(PhotoModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,8 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Friend} from '../../interfaces/friend';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {ModalPhotoComponent} from '../modal-photo/modal-photo.component';
-import {FriendModalComponent} from '../friend-modal/friend-modal.component';
+import {PhotoModalComponent} from '../photos/photo-modal/photo-modal.component';
 
 @Component({
   selector: 'app-board',
@@ -20,7 +19,7 @@ export class BoardComponent implements OnInit {
   }
 
   openAddPhotoModal() {
-    const modal = this.modalService.open(ModalPhotoComponent);
+    const modal = this.modalService.open(PhotoModalComponent);
   }
 
 }

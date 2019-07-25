@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {FriendModalComponent} from '../friend-modal/friend-modal.component';
 import {User} from '../../interfaces/user';
 import {AuthenticationService} from '../../services/authentication.service';
 import {UserService} from '../../services/user.service';
 import {FriendService} from '../../services/friend.service';
 import {Friend} from '../../interfaces/friend';
+import {PhotoModalComponent} from '../photos/photo-modal/photo-modal.component';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
       this.userService.getUserById(status.uid).valueChanges().subscribe((data: User) => {
         this.user = data;
         console.log(this.user);
-        this.getFriends();
+        // this.getFriends();
       }, (error) => {
         console.log(error);
       });
@@ -36,18 +36,18 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  getFriends() {
-    if (this.user) {
-      this.friendService.getFriends().valueChanges().subscribe((data: Friend[]) => {
-        console.log(data);
-        this.fiendsList = data;
-      }, (error) => {
-        console.log(error);
-      });
-    }
-  }
+  // getFriends() {
+  //   if (this.user) {
+  //     this.friendService.getFriends().valueChanges().subscribe((data: Friend[]) => {
+  //       console.log(data);
+  //       this.fiendsList = data;
+  //     }, (error) => {
+  //       console.log(error);
+  //     });
+  //   }
+  // }
 
   openAddFriendModal() {
-    const modal = this.modalService.open(FriendModalComponent);
+    const modal = this.modalService.open(PhotoModalComponent);
   }
 }

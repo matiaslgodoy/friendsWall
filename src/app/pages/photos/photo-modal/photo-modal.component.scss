@@ -1,0 +1,26 @@
+.avatarImage{
+  max-width: 25% !important;
+  margin: auto;
+}
+
+.wrapper{
+.file-upload{
+input[type='file']{
+  height:200px;
+  width:200px;
+  position:absolute;
+  top:0;
+  left:0;
+  opacity:0;
+  cursor:pointer;
+}
+
+&:hover{
+
+ }
+
+}
+}
+.input-group-text{
+  height: 38px;
+}

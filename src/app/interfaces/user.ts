@@ -3,4 +3,5 @@ export interface User {
   email: string;
   uid: any;
   avatar?: string;
+  photos?: any;
 }

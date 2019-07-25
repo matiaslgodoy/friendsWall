@@ -4,22 +4,33 @@ import { AppComponent } from './app.component';
 import {environment} from '../environments/environment';
 import {ImageCropperModule} from 'ngx-image-cropper';
 import {FormsModule} from '@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {RouterModule, Routes} from '@angular/router';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
+
+//firebase
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
-import { FriendModalComponent } from './pages/friend-modal/friend-modal.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+// components
 import { HomeComponent } from './pages/home/home.component';
-import {RouterModule, Routes} from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { BoardComponent } from './pages/board/board.component';
 import { NoteComponent } from './pages/note/note.component';
-import { ModalPhotoComponent } from './pages/modal-photo/modal-photo.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
+import { PhotoComponent } from './pages/photos/photo/photo.component';
+import { PhotoModalComponent } from './pages/photos/photo-modal/photo-modal.component';
+import { PhotoListComponent } from './pages/photos/photo-list/photo-list.component';
+
+// services
+import {PhotoService} from './services/photo.service';
+
+
+
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -33,12 +44,13 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    FriendModalComponent,
     HomeComponent,
     LoginComponent,
     BoardComponent,
     NoteComponent,
-    ModalPhotoComponent
+    PhotoComponent,
+    PhotoModalComponent,
+    PhotoListComponent
   ],
   imports: [
     BrowserModule,
@@ -60,11 +72,10 @@ export function createTranslateLoader(http: HttpClient) {
       }
     })
   ],
-  providers: [],
+  providers: [PhotoService],
   bootstrap: [AppComponent],
   entryComponents: [
-    FriendModalComponent,
-    ModalPhotoComponent
+    PhotoModalComponent
   ]
 })
 export class AppModule {

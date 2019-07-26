@@ -1,1 +1,5 @@
-<p>photo-list works!</p>
+<div class="wscroll" id="inner-board">
+  <div *ngFor="let photo of photoList">
+    <app-photo [photo]="photo"></app-photo>
+  </div>
+</div>

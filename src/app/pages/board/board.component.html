@@ -37,15 +37,7 @@
       </div>
     </div>
   </div>
-  <div class="wscroll" id="inner-board">
-    <div *ngFor="let friend of friedsList">
-      <div class="picture-container">
-        <img [src]="friend.picture" class="wid-20-per picture-back ">
-        <img [src]="'/assets/img/photo_border.png'" class="wid-20-per picture-front">
-      </div>
-    </div>
-
-  </div>
+  <app-photo-list></app-photo-list>
 </div>
 
 

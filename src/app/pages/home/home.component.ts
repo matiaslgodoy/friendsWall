@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {User} from '../../interfaces/user';
+import {User} from '../../models/user';
 import {AuthenticationService} from '../../services/authentication.service';
 import {UserService} from '../../services/user.service';
 import {FriendService} from '../../services/friend.service';
-import {Friend} from '../../interfaces/friend';
+import {Friend} from '../../models/friend';
 import {PhotoModalComponent} from '../photos/photo-modal/photo-modal.component';
 
 @Component({

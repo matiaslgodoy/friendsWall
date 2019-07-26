@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Friend} from '../../interfaces/friend';
+import {Friend} from '../../models/friend';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {PhotoModalComponent} from '../photos/photo-modal/photo-modal.component';
 
@@ -9,9 +9,6 @@ import {PhotoModalComponent} from '../photos/photo-modal/photo-modal.component';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-
-  @Input()
-  fiendsList: Friend[] = [];
 
   constructor(private modalService: NgbModal) { }
 

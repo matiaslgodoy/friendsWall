@@ -1,8 +1,18 @@
-<div ngDraggable class="picture-container">
+<!--<div ngDraggable class="picture-container" [ngStyle]="{'transform': 'translate(' + $x + 'px, ' + $y + 'px)'}">-->
+<div ngDraggable class="picture-container"
+
+     (mouseenter) ="showOption = true"  (mouseleave) ="showOption = false">
   <img [src]="photo.picture || 'assets/img/generic_user.png'" class="wid-20-per picture-back ">
   <img [src]="'/assets/img/photo_border.png'" class="wid-20-per picture-front">
-  <!--<span>-->
-     <!--<i class="far fa-edit"></i>-->
-     <!--<i class="far fa-trash-alt"></i>-->
-  <!--</span>-->
+  <span class="photo-options" *ngIf="showOption">
+     <i class="far fa-edit mr-1 pointer" (click)="uptadePhoto()"></i>
+     <i class="far fa-trash-alt pointer" (click)="deletePhoto()"></i>
+  </span>
+  <span class="photo-name">
+    {{photo.name}}
+  </span>
+  <a class="photo-contact pointer" *ngIf="photo.contactType != 'none'" href="{{contactUrl}}" target="_blank" >
+    <i class="fab fa-{{photo.contactType | translate}}" ></i>
+    {{photo.contact}}
+  </a>
 </div>

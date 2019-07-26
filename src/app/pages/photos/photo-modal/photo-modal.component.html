@@ -58,7 +58,8 @@
 
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="addPhoto()">Agregar</button>
+    <button *ngIf="!photo.$key" type="button" class="btn btn-outline-dark" (click)="addPhoto()">{{'add' | translate}}</button>
+    <button *ngIf="photo.$key" type="button" class="btn btn-outline-dark" (click)="updatePhoto()">{{'update' | translate}}</button>
   </div>
 </div>
 

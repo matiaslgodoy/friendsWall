@@ -4,5 +4,11 @@
   "name": "Nombre",
   "social-network": "Red Social",
   "contact": "Contacto",
-  "up-photo": "Subir Foto"
+  "up-photo": "Subir Foto",
+  "add": "Agregar",
+  "update": "Modificar",
+  "yes": "Si",
+  "no": "No",
+  "alert": "Alerta!",
+  "delete-element": "¿Esta seguro de querer eliminar este elemento?"
 }

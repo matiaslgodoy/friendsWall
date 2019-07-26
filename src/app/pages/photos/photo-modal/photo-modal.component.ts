@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AuthenticationService} from '../../../services/authentication.service';
 import {UserService} from '../../../services/user.service';
 import {User} from '../../../models/user';
@@ -15,6 +15,7 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class PhotoModalComponent implements OnInit {
 
+  @Input()
   photo: Photo = <Photo> {
     name: '',
     picture: '',
@@ -67,6 +68,26 @@ export class PhotoModalComponent implements OnInit {
       }).catch((error) => {
         console.log(error);
       });
+    }
+  }
+  updatePhoto(){
+    if (this.croppedImage) {
+      const currentPictureId = Date.now();
+      const pictures = this.firebaseStorage.ref('pictures/' + currentPictureId + '.jpg').putString(this.croppedImage, 'data_url');
+      pictures.then((result) => {
+        this.picture = this.firebaseStorage.ref('pictures/' + currentPictureId + '.jpg').getDownloadURL();
+        this.picture.subscribe((p) => {
+          this.photo.picture = p;
+          this.photoService.updatePhoto(this.photo);
+          //this.toastr.success('Foto agregada!');
+          this.activeModal.close();
+        });
+      }).catch((error) => {
+        console.log(error);
+      });
+    } else {
+      this.photoService.updatePhoto(this.photo);
+      this.activeModal.close();
     }
   }
 

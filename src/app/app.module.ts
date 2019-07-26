@@ -31,6 +31,7 @@ import { PhotoListComponent } from './pages/photos/photo-list/photo-list.compone
 // services
 import {PhotoService} from './services/photo.service';
 import {AngularDraggableModule} from 'angular2-draggable';
+import { YesNoModalComponent } from './pages/yes-no-modal/yes-no-modal.component';
 
 
 
@@ -53,7 +54,8 @@ export function createTranslateLoader(http: HttpClient) {
     NoteComponent,
     PhotoComponent,
     PhotoModalComponent,
-    PhotoListComponent
+    PhotoListComponent,
+    YesNoModalComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +83,8 @@ export function createTranslateLoader(http: HttpClient) {
   providers: [PhotoService],
   bootstrap: [AppComponent],
   entryComponents: [
-    PhotoModalComponent
+    PhotoModalComponent,
+    YesNoModalComponent
   ]
 })
 export class AppModule {

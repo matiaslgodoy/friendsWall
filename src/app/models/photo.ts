@@ -6,4 +6,6 @@ export interface Photo {
   contactType?: string;
   picture?: string;
   userId: any;
+  translateX: number;
+  translateY: number;
 }

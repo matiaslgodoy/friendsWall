@@ -2,3 +2,21 @@
   width: 10px;
   height: 10px;
 }
+.photo-options{
+  position: absolute;
+  right: 8px;
+}
+.photo-name{
+  position: absolute;
+  left: 10px;
+  bottom: -35px;
+  font-style: italic;
+  font-family: cursive;
+}
+.photo-contact{
+  position: absolute;
+  right: 10px;
+  bottom: -35px;
+  font-style: italic;
+  font-family: cursive;
+}

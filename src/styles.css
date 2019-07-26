@@ -27,15 +27,18 @@
 
 .picture-container{
   position: relative; left: 0; top: 0;
+  width: 20%;
 
 }
 
 .picture-back{
+  width: 100%;
   position: relative;
   top: 0;
   left: 0;
 }
 .picture-front{
+  width: 100%;
   position: absolute;
   top: 0px;
   left: 0px;

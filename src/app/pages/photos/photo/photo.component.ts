@@ -23,7 +23,7 @@ export class PhotoComponent implements OnInit {
 
   ngOnInit() {
     if (this.photo.contactType != 'none') {
-      switch (this.photo.contact) {
+      switch (this.photo.contactType) {
         case 'facebook':
           this.contactUrl =  'https://www.facebook.com/' + this.photo.contact;
           break;

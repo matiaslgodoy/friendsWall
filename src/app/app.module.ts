@@ -30,6 +30,7 @@ import { PhotoListComponent } from './pages/photos/photo-list/photo-list.compone
 
 // services
 import {PhotoService} from './services/photo.service';
+import {AngularDraggableModule} from 'angular2-draggable';
 
 
 
@@ -68,6 +69,7 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    AngularDraggableModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

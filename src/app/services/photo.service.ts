@@ -42,7 +42,9 @@ export class PhotoService {
       contact: photo.contact,
       contactType: photo.contactType,
       picture: photo.picture,
-      userId: this.user.uid
+      userId: this.user.uid,
+      posX: photo.posX,
+      posY: photo.posY
     });
   }
 

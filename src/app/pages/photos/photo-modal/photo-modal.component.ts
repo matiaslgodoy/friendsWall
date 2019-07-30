@@ -20,7 +20,10 @@ export class PhotoModalComponent implements OnInit {
     name: '',
     picture: '',
     contact: '',
-    contactType: 'none'};
+    contactType: 'none',
+    posX: 0,
+    posY: 0
+  };
   imageChangedEvent: any = '';
   croppedImage: any = '';
   isLoadImage = false;

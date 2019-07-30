@@ -21,6 +21,7 @@ export class PhotoComponent implements OnInit {
               private modalService: NgbModal) { }
 
   ngOnInit() {
+    this.photoService.getPhotos();
     if (this.photo.contactType != 'none') {
       switch (this.photo.contactType) {
         case 'facebook':
@@ -53,7 +54,16 @@ export class PhotoComponent implements OnInit {
 
   mouseUp(event){
     // HTML --> (window:mouseup)="mouseUp($event)"
-    console.log('mouseUp');
+    //console.log('mouseUp');
+    let elements = document.querySelector('#photo-' + this.photo.$key).attributes.style.value.toString().split('px');
+    let posX = +elements[0].split('(')[1];
+    let posY = +elements[1].split(', ')[1];
+    if (this.photo.posX != posX || this.photo.posY != posY) {
+      this.photo.posX = posX;
+      this.photo.posY = posY;
+      this.photoService.updatePhoto(this.photo);
+      //this.uptadePhoto();
+    }
   }
 
 }

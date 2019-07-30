@@ -1,7 +1,7 @@
-<!--<div ngDraggable class="picture-container" [ngStyle]="{'transform': 'translate(' + $x + 'px, ' + $y + 'px)'}">-->
-<div ngDraggable class="picture-container"
-
-     (mouseenter) ="showOption = true"  (mouseleave) ="showOption = false">
+<div ngDraggable [position]="{ x:photo.posX, y:photo.posY }" class="picture-container" (window:mouseup)="mouseUp()"
+     id="{{'photo-' + photo.$key}}"
+     (mouseenter) ="showOption = true"  (mouseleave) ="showOption = false"
+     >
   <img [src]="photo.picture || 'assets/img/generic_user.png'" class="wid-20-per picture-back ">
   <img [src]="'/assets/img/photo_border.png'" class="wid-20-per picture-front">
   <span class="photo-options" *ngIf="showOption">

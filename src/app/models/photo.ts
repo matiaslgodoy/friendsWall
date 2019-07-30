@@ -6,6 +6,6 @@ export interface Photo {
   picture?: string;
   userId: any;
   size: number;
-  translateX: number;
-  translateY: number;
+  posX: number;
+  posY: number;
 }

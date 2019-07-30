@@ -9,13 +9,13 @@
 .photo-name{
   position: absolute;
   left: 10px;
-  bottom: -35px;
+  bottom: -18px;
   font-style: italic;
   font-family: cursive;
 }
 .photo-contact{
   position: absolute;
-  right: 10px;
+  left: 10px;
   bottom: -35px;
   font-style: italic;
   font-family: cursive;

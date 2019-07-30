@@ -9,5 +9,5 @@
 </div>
 <div class="modal-footer">
   <button type="button" class="col-2 btn btn-danger" (click)="onSendAnswer(true)">{{'yes' | translate}}</button>
-  <button type="button" class="col-2 btn btn-secondary" data-dismiss="modal">{{'no' | translate}}</button>
+  <button type="button" class="col-2 btn btn-secondary" (click)="onSendAnswer(false)">{{'no' | translate}}</button>
 </div>

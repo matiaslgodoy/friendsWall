@@ -16,7 +16,6 @@ export class PhotoComponent implements OnInit {
   photo: Photo;
   showOption: false;
   contactUrl: string;
-  @ViewChild('ElementRefName') element: ElementRef;
 
   constructor(private photoService: PhotoService,
               private modalService: NgbModal) { }

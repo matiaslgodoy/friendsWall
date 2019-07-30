@@ -5,7 +5,7 @@ export interface Photo {
   contactType?: string;
   picture?: string;
   userId: any;
-  size: number;
+  size: string;
   posX: number;
   posY: number;
 }

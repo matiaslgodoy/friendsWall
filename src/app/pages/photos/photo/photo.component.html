@@ -1,17 +1,17 @@
-<div ngDraggable [position]="{ x:photo.posX, y:photo.posY }" class="picture-container" (window:mouseup)="mouseUp()"
+<div ngDraggable [position]="{ x:photo.posX, y:photo.posY }" class="picture-container shadow-photo" (window:mouseup)="mouseUp()"
      id="{{'photo-' + photo.$key}}"
      (mouseenter) ="showOption = true"  (mouseleave) ="showOption = false"
-     >
+     [ngClass]="'photo-' + photo.size">
   <img [src]="photo.picture || 'assets/img/generic_user.png'" class="wid-20-per picture-back ">
   <img [src]="'/assets/img/photo_border.png'" class="wid-20-per picture-front">
-  <span class="photo-options" *ngIf="showOption">
+  <span  [ngClass]="'photo-options-' + photo.size" *ngIf="showOption">
      <i class="far fa-edit mr-1 pointer" (click)="uptadePhoto()"></i>
      <i class="far fa-trash-alt pointer" (click)="deletePhoto()"></i>
   </span>
-  <span class="photo-name">
+  <span [ngClass]="'photo-name-' + photo.size" *ngIf="photo.contactType == 'none'">
     {{photo.name}}
   </span>
-  <a class="photo-contact pointer" *ngIf="photo.contactType != 'none'" href="{{contactUrl}}" target="_blank" >
+  <a [ngClass]="'pointer photo-name-' + photo.size" *ngIf="photo.contactType != 'none'" href="{{contactUrl}}" target="_blank" >
     <i class="fab fa-{{photo.contactType | translate}}" ></i>
     {{photo.contact}}
   </a>

@@ -44,7 +44,8 @@ export class PhotoService {
       picture: photo.picture,
       userId: this.user.uid,
       posX: photo.posX,
-      posY: photo.posY
+      posY: photo.posY,
+      size: photo.size
     });
   }
 

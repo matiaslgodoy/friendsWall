@@ -2,21 +2,62 @@
   width: 10px;
   height: 10px;
 }
-.photo-options{
+.photo-options-small{
   position: absolute;
-  right: 8px;
+  right: 7px;
+  top: 3px;
 }
-.photo-name{
+.photo-options-medium{
+  position: absolute;
+  right: 11px;
+  top: 6px;
+}
+.photo-options-big{
+  position: absolute;
+  right: 13px;
+  top: 10px;
+}
+.photo-name-small{
+  position: absolute;
+  left: 5px;
+  bottom: 2px;
+  font-style: italic;
+  font-family: cursive;
+  font-size: 12px;
+  font-size: 12px;
+}
+.photo-name-medium{
   position: absolute;
   left: 10px;
-  bottom: -18px;
+  bottom: 4px;
   font-style: italic;
   font-family: cursive;
 }
-.photo-contact{
+.photo-name-big{
   position: absolute;
   left: 10px;
-  bottom: -35px;
+  bottom: 6px;
   font-style: italic;
   font-family: cursive;
 }
+/*.photo-contact-small{*/
+  /*position: absolute;*/
+  /*left: 10px;*/
+  /*bottom: -35px;*/
+  /*font-style: italic;*/
+  /*font-family: cursive;*/
+/*}*/
+/*.photo-contact-medium{*/
+  /*position: absolute;*/
+  /*left: 10px;*/
+  /*bottom: -35px;*/
+  /*font-style: italic;*/
+  /*font-family: cursive;*/
+/*}*/
+/*.photo-contact-big{*/
+  /*position: absolute;*/
+  /*left: 10px;*/
+  /*bottom: -35px;*/
+  /*font-style: italic;*/
+  /*font-family: cursive;*/
+/*}*/

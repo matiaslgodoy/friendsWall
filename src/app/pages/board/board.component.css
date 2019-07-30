@@ -119,9 +119,9 @@ body {
 
 #board {
   border: 31px solid transparent;
-  height: 93vh;
+  /*height: 93vh;*/
   width: 97vw;
-  min-height: 381px;
+  /*min-height: 381px;*/
   min-width: 572px;
   /*max-width: 1500px;*/
   background-image: url("http://res.cloudinary.com/cspaveljb/image/upload/v1499110969/cork_w2tt25.jpg");

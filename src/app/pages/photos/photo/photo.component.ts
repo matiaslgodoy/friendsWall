@@ -53,8 +53,6 @@ export class PhotoComponent implements OnInit {
   }
 
   mouseUp(event){
-    // HTML --> (window:mouseup)="mouseUp($event)"
-    //console.log('mouseUp');
     let elements = document.querySelector('#photo-' + this.photo.$key).attributes.style.value.toString().split('px');
     let posX = +elements[0].split('(')[1];
     let posY = +elements[1].split(', ')[1];
@@ -62,7 +60,6 @@ export class PhotoComponent implements OnInit {
       this.photo.posX = posX;
       this.photo.posY = posY;
       this.photoService.updatePhoto(this.photo);
-      //this.uptadePhoto();
     }
   }
 

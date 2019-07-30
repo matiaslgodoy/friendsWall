@@ -32,6 +32,17 @@
 
     <div class="col-12 mb-2">
       <div class="input-group">
+        <label class="col-3 mt-2">{{'size' | translate}}</label>
+        <!--<input [(ngModel)]="photo.name" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">-->
+        <select [(ngModel)]="photo.size"  class="custom-select" id="inputGroupSelect02">
+          <option value="small">{{'small' | translate}}</option>
+          <option value="medium">{{'medium' | translate}}</option>
+          <option value="big">{{'big' | translate}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-12 mb-2">
+      <div class="input-group">
         <label class="col-3 mt-2">{{'name' | translate}}</label>
         <input [(ngModel)]="photo.name" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">
       </div>

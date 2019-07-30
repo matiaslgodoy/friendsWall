@@ -22,7 +22,8 @@ export class PhotoModalComponent implements OnInit {
     contact: '',
     contactType: 'none',
     posX: 0,
-    posY: 0
+    posY: 0,
+    size: 'small'
   };
   imageChangedEvent: any = '';
   croppedImage: any = '';

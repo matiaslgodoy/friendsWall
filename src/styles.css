@@ -1,2 +1,97 @@
-/* You can add global styles to this file, and also import other style files */
 
+.mar-aut{
+  margin: auto;
+}
+.wid-20-per{
+  width: 20%;
+}
+
+.shadow-item{
+  -webkit-box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.75);
+}
+
+.pin-yellow {
+  background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 50%, black 100%);
+  background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, black);
+  background-image: radial-gradient(yellow 50%, black 100%);
+}
+.pin-red {
+  background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, red 50%, black 100%);
+  background-image: -webkit-radial-gradient(45px 45px, circle cover, red, black);
+  background-image: radial-gradient(red 50%, black 100%);
+}
+
+
+
+.picture-container{
+  position: relative; left: 0; top: 0;
+  /*width: 20%;*/
+}
+
+.picture-back{
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.picture-front{
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.font-20{
+  font-size: 20px;
+}
+
+.mar-ri-10{
+  margin-right: 10px;
+}
+
+.pad-le-0{
+  padding-left: 0px;
+}
+
+.color-facebook{
+  color: blue;
+}
+.color-instagram{
+  color: magenta;
+}
+.color-twitter{
+  color: aqua;
+}
+.color-cancel{
+  color: red;
+}
+.pointer{
+  cursor: pointer;
+}
+
+.photo-small{
+  width: 100px;
+  padding-bottom: 20px;
+  /*font-size: 25px;*/
+  -webkit-box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.75);
+}
+.photo-medium{
+  width: 150px;
+  padding-bottom: 30px;
+  /*font-size: 30px;*/
+  -webkit-box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.75);
+}
+.photo-big{
+  width: 200px;
+  padding-bottom: 40px;
+  /*font-size: 35px;*/
+  -webkit-box-shadow: 4px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 4px 10px 5px 0px rgba(0,0,0,0.75);
+}

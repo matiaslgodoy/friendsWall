@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {Photo} from '../../../models/photo';
 import {PhotoService} from '../../../services/photo.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
@@ -8,7 +8,7 @@ import {YesNoModalComponent} from '../../yes-no-modal/yes-no-modal.component';
 @Component({
   selector: 'app-photo',
   templateUrl: './photo.component.html',
-  styleUrls: ['./photo.component.css']
+  styleUrls: ['./photo.component.scss']
 })
 export class PhotoComponent implements OnInit {
 
@@ -22,7 +22,7 @@ export class PhotoComponent implements OnInit {
 
   ngOnInit() {
     this.photoService.getPhotos();
-    if (this.photo.contactType != 'none') {
+    if (this.photo.contactType !== 'none') {
       switch (this.photo.contactType) {
         case 'facebook':
           this.contactUrl =  'https://www.facebook.com/' + this.photo.contact;
@@ -52,11 +52,15 @@ export class PhotoComponent implements OnInit {
     });
   }
 
-  mouseUp(event){
-    let elements = document.querySelector('#photo-' + this.photo.$key).attributes.style.value.toString().split('px');
-    let posX = +elements[0].split('(')[1];
-    let posY = +elements[1].split(', ')[1];
-    if (this.photo.posX != posX || this.photo.posY != posY) {
+  @HostListener('document:mouseup', ['$event'])
+  onMouseUp(e) {
+    //console.log(e.type);
+    const element: string = document.querySelector('#photo-' + this.photo.$key).attributes.getNamedItem('style').value;
+    const elements = element.split('px');
+    //let elements = document.querySelector('#photo-' + this.photo.$key).attributes.style.value.toString().split('px');
+    const posX = +elements[0].split('(')[1];
+    const posY = +elements[1].split(', ')[1];
+    if (this.photo.posX !== posX || this.photo.posY !== posY) {
       this.photo.posX = posX;
       this.photo.posY = posY;
       this.photoService.updatePhoto(this.photo);

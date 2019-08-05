@@ -1,6 +1,6 @@
-<div ngDraggable [position]="{ x:photo.posX, y:photo.posY }" class="picture-container shadow-photo" (window:mouseup)="mouseUp()"
+<div ngDraggable [position]="{ x:photo.posX, y:photo.posY }" class="picture-container shadow-photo"
      id="{{'photo-' + photo.$key}}"
-     (mouseenter) ="showOption = true"  (mouseleave) ="showOption = false"
+     (mouseenter) ="showOption = true"  (mouseleave) ="showOption = false" (mouseup)="onMouseUp($event)"
      [ngClass]="'photo-' + photo.size">
   <img [src]="photo.picture || 'assets/img/generic_user.png'" class="wid-20-per picture-back ">
   <img [src]="'/assets/img/photo_border.png'" class="wid-20-per picture-front">

@@ -28,7 +28,7 @@
     "bootstrap": "4.3.1",
     "firebase": "^6.3.0",
     "guid-typescript": "^1.0.9",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-bootstrap": "^5.1.0",
     "ngx-image-cropper": "^1.4.1",
     "ngx-toastr": "^10.0.4",
